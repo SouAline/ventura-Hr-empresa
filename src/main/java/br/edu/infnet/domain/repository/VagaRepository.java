@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface VagaRepository extends CrudRepository<Vaga, Integer> {
 
-    List<Vaga> findAllByIdUsuario(Integer usuarioId);
+    List<Vaga> findByUsuarioId(Integer usuarioId);
 
-    List<Vaga> buscaCargoContainingIgnoreCase(String busca);
+    List<Vaga> findByCargoContainingIgnoreCase(String busca);
 
-    List<Vaga> buscaCidadeContainingIgnoreCase(String busca);
+    List<Vaga> findByCidadeContainingIgnoreCase(String busca);
 }

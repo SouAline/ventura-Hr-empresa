@@ -20,7 +20,7 @@ public class VagaController {
 
     @GetMapping(path = "/usuario/{usuarioId}")
     public ResponseEntity listaUsuarioPorId(@PathVariable Integer usuarioId) {
-        List<Vaga> lista = vagaRepository.findAllByIdUsuario(usuarioId);
+        List<Vaga> lista = vagaRepository.findByUsuarioId(usuarioId);
         return ResponseEntity.ok().body(lista);
     }
 
@@ -28,7 +28,7 @@ public class VagaController {
     public ResponseEntity listaPorCargo(@PathVariable String busca) {
         ResponseEntity resposta = ResponseEntity.notFound().build();
         try {
-            List<Vaga> lista = vagaRepository.buscaCargoContainingIgnoreCase(busca);
+            List<Vaga> lista = vagaRepository.findByCargoContainingIgnoreCase(busca);
             if (!lista.isEmpty()) {
                 resposta = ResponseEntity.ok().body(lista);
             }
@@ -41,7 +41,7 @@ public class VagaController {
     public ResponseEntity listaPorCidade(@PathVariable String busca) {
         ResponseEntity resposta = ResponseEntity.notFound().build();
         try {
-            List<Vaga> lista = vagaRepository.buscaCidadeContainingIgnoreCase(busca);
+            List<Vaga> lista = vagaRepository.findByCidadeContainingIgnoreCase(busca);
             if (!lista.isEmpty()) {
                 resposta = ResponseEntity.ok().body(lista);
             }
