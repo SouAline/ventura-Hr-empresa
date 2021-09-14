@@ -11,7 +11,7 @@ public class Criterio implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer descricao;
+    private String descricao;
     private int perfil;
     private int peso;
 
@@ -30,11 +30,11 @@ public class Criterio implements Serializable {
         this.id = id;
     }
 
-    public Integer getDescricao() {
+    public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(Integer descricao) {
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 
