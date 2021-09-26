@@ -53,7 +53,7 @@ public class VagaController {
     @PostMapping
     public ResponseEntity publicarVaga(@RequestBody Vaga vaga) {
         ResponseEntity resposta = ResponseEntity.badRequest().build();
-        List<Criterio> listaCriterio = vaga.getListaCriterio();
+        List<Criterio> listaCriterio = vaga.getCriterioList();
         if (listaCriterio != null && !listaCriterio.isEmpty()) {
             for (Criterio criterio : listaCriterio) {
                 criterio.setVaga(vaga);
