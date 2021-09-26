@@ -3,10 +3,9 @@ package br.edu.infnet.domain.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
-public class Criterio implements Serializable {
+public class Criterio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

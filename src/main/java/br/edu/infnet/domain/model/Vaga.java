@@ -2,11 +2,10 @@ package br.edu.infnet.domain.model;
 
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Vaga implements Serializable {
+public class Vaga {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +16,7 @@ public class Vaga implements Serializable {
     private Integer usuarioId;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Criterio> listaCriterio;
+    private List<Criterio> criterioList;
 
     public Vaga() {
     }
@@ -62,11 +61,11 @@ public class Vaga implements Serializable {
         this.usuarioId = usuarioId;
     }
 
-    public List<Criterio> getListaCriterio() {
-        return listaCriterio;
+    public List<Criterio> getCriterioList() {
+        return criterioList;
     }
 
-    public void setListaCriterio(List<Criterio> listaCriterio) {
-        this.listaCriterio = listaCriterio;
+    public void setCriterioList(List<Criterio> criterioList) {
+        this.criterioList = criterioList;
     }
 }
